@@ -31,7 +31,7 @@ export const Register=()=>
 
     const Regis=()=>
     {
-        alert("Zealous Tech always welcome")
+        alert("Zealous Tech always welcome"+JSON.stringify(process))
     }
     const reset=()=>
     {
@@ -46,21 +46,33 @@ export const Register=()=>
                 <div className="col-lg-8 col-md-0 col-sm-12 shadow-lg p-3 bg-info">
                     <div className="form group">
                         <label>EmployeeId</label>
-                        <input type="text" name="empId" placeholder="Employee Id"className="form-control"/>
+                        <input type="text" name="empId" 
+                        onChange={track}
+                        value={process.empId}
+                        placeholder="Employee Id"className="form-control"/>
                     </div>
                     <div className="form group">
                         <label>EmployeeName</label>
-                        <input type="text" name="empName" placeholder="EmplyeeName" className="form-control"/>
+                        <input type="text" name="empName" 
+                        onChange={track}
+                        value={process.empName}
+                        placeholder="EmplyeeName" className="form-control"/>
                         
                     </div>
                     <div className="form group">
                         <label>EmployeeUsername</label>
-                        <input type="text" name="empUsername" placeholder="Employee Username" className="form-control"/>
+                        <input type="text" name="empUsername" 
+                        onChange={track}
+                        value={process.empUsername}
+                        placeholder="Employee Username" className="form-control"/>
                         
                     </div>
                     <div className="form-group">
                         <label>EmployeePassword</label>
-                        <input type="text" name="empPassword" placeholder="EmployeePassword" className="form-control"/>
+                        <input type="text" name="empPassword" 
+                        onChange={track}
+                        value={process.empPassword}
+                        placeholder="EmployeePassword" className="form-control"/>
 
 
                     </div>
@@ -68,6 +80,8 @@ export const Register=()=>
                         <label>Employee Designation</label>
                         <select name="empDesignation"
                         className="form-select me-5">
+                            onChange={track}
+                            value={process.empDesignation}
                             <option>select Designation</option>
                             <option>Python Full Stack Developer</option>
                             <option>C & C# Developer</option>
@@ -78,13 +92,18 @@ export const Register=()=>
                     </div>
                     <div className="form group">
                         <label>EmployeeExp</label>
-                        <input type="text" name="empExp" placeholder="EmployeeExp" className="form-control"/>
+                        <input type="text" name="empExp" 
+                        onChange={track}
+                        value={process.empExp}
+                        placeholder="EmployeeExp" className="form-control"/>
 
                     </div>
                     <div className="form group">
                         <label>EmployeeSalary</label>
                         <input type="text"
                         name="empSalary"
+                        onChange={track}
+                        value={process.empSalary}
                         placeholder="EmployeeSalary"
                         className="form-control"
                         />
