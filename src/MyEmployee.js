@@ -1,4 +1,4 @@
-let myemployee=[
+let MyEmployee=[
     {
         "empId":1,
         "empName":"Mohana",
@@ -30,11 +30,11 @@ let myemployee=[
 ]
 export const create=(data)=>
 {
-    myemployee.push(add)
+    MyEmployee.push(data)
 }
 export const list=()=>
 {
-    return myemployee;
+    return MyEmployee;
 }
         
 

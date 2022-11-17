@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import { create } from "./MyEmployee";
 export const Register=()=>
 {
     const[process,setProcess]=useState({
@@ -26,7 +27,9 @@ export const Register=()=>
       } 
     const Regis=()=>
     {
-        alert("Zealous Tech always welcome"+JSON.stringify(process))
+        alert("welcom to zealous tech corb,go to back...")
+        create(process)
+        // alert("Zealous Tech always welcome"+JSON.stringify(process))
     }
     const reset=()=>
     {
