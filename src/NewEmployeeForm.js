@@ -24,11 +24,6 @@ export const Register=()=>
             }
         )
       } 
-
-    
-        
-    
-
     const Regis=()=>
     {
         alert("Zealous Tech always welcome"+JSON.stringify(process))

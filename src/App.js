@@ -1,9 +1,11 @@
+import { HomePage } from "./Home";
 import { Register } from "./NewEmployeeForm";
 
 
 function App() {
   return (
-    <Register/>
+    <HomePage/>
+    // <Register/>
 
   );
 }
