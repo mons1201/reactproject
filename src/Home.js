@@ -2,11 +2,14 @@ import { useEffect, useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import {list} from "./MyEmployee"
 import { Register } from "./NewEmployeeForm"
+import { Reading } from "./read"
 
 export const HomePage=()=>
 {
     const[tmparray,setTmparry]=useState([])
     const[createView,setCreateView]=useState(false)
+    const[readView,setreadView]=useState(false)
+    const[pos,setpos]=useState(0)
 
     const result=()=>
     {
@@ -32,7 +35,19 @@ return(
         }>
             Back
         </button>
-        </>:
+        </>
+        :(readView)?
+        <>
+        <Reading who={pos}/>
+        <button className="btn btn-outline-seondary" onClick={
+             ()=>
+             {setreadView(false)
+             }
+         }>
+             Back
+         </button>
+         </>
+         :
         <>
         <button className="btn btn-outline-success" onClick={
             ()=>
@@ -54,6 +69,7 @@ return(
                             <th>empDesignation</th>
                             <th>empExperience</th>
                             <th>empSalary</th>
+                            <th>Actions</th>
                            
                         </tr>
                     </thead>
@@ -69,6 +85,19 @@ return(
                                 <td>{ele.empDesignation}</td>
                                 <td>{ele.empExperience}</td>
                                 <td>{ele.empSalary}</td>
+                                <td>
+                                    <button className="btn btn-outline-info" onClick={
+                                        ()=>
+                                        {
+                                            setreadView(true)
+                                            setpos(ind)
+
+                                        }
+                                        
+                                    }>
+                                        read
+                                    </button>
+                                </td>
                             </tr>
                           ))
                         }
