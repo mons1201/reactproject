@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-icons/font/bootstrap-icons.css"
 import {list} from "./MyEmployee"
 import { Register } from "./NewEmployeeForm"
 import { Reading } from "./read"
@@ -95,7 +96,7 @@ return(
                                         }
                                         
                                     }>
-                                        read
+                                        <i class="bi bi-book-fill"></i>
                                     </button>
                                 </td>
                             </tr>
