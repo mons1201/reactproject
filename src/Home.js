@@ -83,13 +83,13 @@ return(
                 <table className="col-lg-8 col-md-10 col-sm-12 table table-striped p-4 shadow rounded">
                     <thead>
                         <tr>
-                            <th>EmployeeId</th>
-                            <th>EmployeeName</th>
-                            <th>EmployeeUsername</th>
-                            <th>empPassword</th>
-                            <th>empDesignation</th>
-                            <th>empExperience</th>
-                            <th>empSalary</th>
+                            <th>Employee Id</th>
+                            <th>Employee Name</th>
+                            <th>Employee Username</th>
+                            <th>Employee Password</th>
+                            <th>Employee Designation</th>
+                            <th>Employee Experience</th>
+                            <th>Employee Salary</th>
                             <th>Actions</th>
                            
                         </tr>
@@ -125,7 +125,7 @@ return(
                                             setUpdateView(true)
                                             setPos(ind)
                                             const temp=FetchExact(ele.empName);
-                                            //setObj(temp);
+                                            setObj(temp);
                                         }
                                         
                                     }>

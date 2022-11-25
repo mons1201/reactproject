@@ -11,7 +11,7 @@ export const Update=(using)=>
         "empUsername":using.mention.empUsername,
         "empPassword":using.mention.empPassword,
         "empDesignation":using.mention.empDesignation,
-        "empExp":using.mention.empExp,
+        "empExperience":using.mention.empExperience,
         "empSalary":using.mention.empSalary
     })
     const track=(data)=> 
@@ -30,7 +30,7 @@ export const Update=(using)=>
     const Regis=()=>
     {
         alter(process,pos)
-        alert("your value is added")
+        alert("your value is updated")
         
         // alert("welcom to zealous tech corb,go to back...")
         // create(process)
@@ -94,11 +94,11 @@ export const Update=(using)=>
 
                     </div>
                     <div className="form group">
-                        <label>EmployeeExp</label>
+                        <label>EmployeeExperience</label>
                         <input type="text" 
-                        name="empExp" 
+                        name="empExperience" 
                         onChange={track}
-                        value={process.empExp}
+                        value={process.empExperience}
                         placeholder="EmployeeExperience" 
                         className="form-control"
                         />
