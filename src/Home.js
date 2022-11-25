@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
-import {list} from "./MyEmployee"
+import {FetchExact, list,remove} from "./MyEmployee"
 import { Register } from "./NewEmployeeForm"
 import { Reading } from "./read"
+import { Update } from "./updates"
+
+
 
 export const HomePage=()=>
 {
     const[tmparray,setTmparry]=useState([])
     const[createView,setCreateView]=useState(false)
     const[readView,setreadView]=useState(false)
-    const[pos,setpos]=useState(0)
+    const[updateView,setUpdateView]=useState(false)
+    const[pos,setPos]=useState(0)
+    const[obj,setObj]=useState({})
 
     const result=()=>
     {
@@ -37,7 +42,8 @@ return(
             Back
         </button>
         </>
-        :(readView)?
+        :
+        (readView)?
         <>
         <Reading who={pos}/>
         <button className="btn btn-outline-seondary" onClick={
@@ -49,6 +55,19 @@ return(
          </button>
          </>
          :
+         (updateView)?
+         <>
+         <Update who={pos} mention={obj}/>
+         <button className="btn btn-outline-seondary" onClick={
+              ()=>
+              {setUpdateView(false)
+              }
+          }>
+              Back
+          </button>
+          </>
+         
+         :
         <>
         <button className="btn btn-outline-success" onClick={
             ()=>
@@ -58,6 +77,7 @@ return(
         }>
             create a new User
         </button>
+        
         <div className="row justify-content-center">
             <div className="table-responsive-md">
                 <table className="col-lg-8 col-md-10 col-sm-12 table table-striped p-4 shadow rounded">
@@ -91,12 +111,35 @@ return(
                                         ()=>
                                         {
                                             setreadView(true)
-                                            setpos(ind)
+                                            setPos(ind)
 
                                         }
                                         
                                     }>
+                                        read
                                         <i class="bi bi-book-fill"></i>
+                                    </button>
+                                    <button className="btn btn-outline-info" onClick={
+                                        ()=>
+                                        {
+                                            setUpdateView(true)
+                                            setPos(ind)
+                                            const temp=FetchExact(ele.empName);
+                                            //setObj(temp);
+                                        }
+                                        
+                                    }>
+                                        Update
+                                    </button>
+                                    <button className="btn btn-outline-info" onClick={
+                                        ()=>
+                                        {
+                                            setTmparry(remove(ind))
+
+                                        }
+                                    }>
+                                        Delete
+
                                     </button>
                                 </td>
                             </tr>
